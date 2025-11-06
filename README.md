@@ -12,4 +12,9 @@ Throughout CP1404, I have learnt several important principles about writing clea
 - Consistency matter. Especially in python, when following naming conventions and style guidelines (PEP 8) will make the code easier to follow and maintain.
 - Creating meaningful names. When creating descriptive variable and function names, it make a massive difference when understanding the code for others and the future significantly easier to read.
 
+## Helpful Links
+
+- [Programming Patterns] (https://github.com/CP1404/Starter/wiki)
+- [CP1404 Practical instructions] (https://github.com/CP1404/Practicals)
+
 Practical work for IT@JCU CP1404
