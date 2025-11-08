@@ -4,6 +4,9 @@ def main():
 
     guitars = load_guitars("guitars.csv")
 
+    print("Stored Guitars: ")
+    display_guitars(guitars)
+
 def load_guitars(filename):
     guitars = []
     with open(filename, "r") as in_file:
@@ -15,5 +18,9 @@ def load_guitars(filename):
             guitar = Guitar(name,year, cost)
             guitars.append(guitar)
     return guitars
+
+def display_guitars(guitars):
+    for i, guitar in enumerate(guitars, 1):
+        print(f"Guitar {i}: {guitar}")
 
 main()
