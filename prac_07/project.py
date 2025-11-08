@@ -8,3 +8,6 @@ class Project:
         self.priority = priority
         self.cost = cost
         self.completion = completion
+
+    def __lt__(self,other):
+        return self.priority < other.priority
