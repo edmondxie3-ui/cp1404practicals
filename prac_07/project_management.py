@@ -28,6 +28,13 @@ def main():
 
         elif choice == 'u':
 
+        print("(L)oad projects")
+        print("(S)ave projects")
+        print("(D)isplay projects")
+        print("(F)ilter projects by date")
+        print("(A)dd new project")
+        print("(U)pdate project")
+        print("(Q)uit")
         choice = input(">>> ").lower()
 
     save_choice = input(f"Would you like to save to projects.txt? ")
