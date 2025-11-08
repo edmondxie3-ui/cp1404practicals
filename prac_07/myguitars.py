@@ -10,6 +10,10 @@ def main():
     print("Add a new guitar: ")
     guitars = add_new_guitars(guitars)
 
+    guitars.sort()
+    print("Sorted Guitars: ")
+    display_guitars(guitars)
+
     save_guitars("guitars.csv", guitars)
     print("Guitars saved to guitars.csv")
 
