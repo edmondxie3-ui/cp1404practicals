@@ -10,6 +10,9 @@ def main():
     print("Add a new guitar: ")
     guitars = add_new_guitars(guitars)
 
+    save_guitars("guitars.csv", guitars)
+    print("Guitars saved to guitars.csv")
+
 def load_guitars(filename):
     guitars = []
     with open(filename, "r") as in_file:
@@ -36,5 +39,10 @@ def add_new_guitars(guitars):
         print(f"{guitar.name} ({guitar.year}) : ${guitar.cost} added.")
         name = input("Name: ")
     return guitars
+
+def save_guitars(filename, guitars):
+    with open(filename, "w") as out_file:
+        for guitar in guitars:
+            print(f"{guitar.name},{guitar.year},{guitar.cost}", file=out_file)
 
 main()
