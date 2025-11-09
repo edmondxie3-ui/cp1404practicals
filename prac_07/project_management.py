@@ -25,8 +25,11 @@ def main():
             filename = input("Enter filename to load projects from: ")
             projects = load_projects(filename)
             print(f"Loaded {len(projects)} projects from {filename}")
-        # elif choice == 's':
-        #
+        elif choice == 's':
+            filename = input("Enter filename to save projects to: ")
+            save_projects(filename, projects)
+            print(f"Projects saved to {filename}")
+
         # elif choice == 'd':
         #
         # elif choice == 'f':
@@ -59,4 +62,17 @@ def load_projects(filename):
             projects.append(project)
     return projects
 
+def save_projects(filename, projects):
+    with open(filename, "w") as file:
+        file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percent\n")
+
+        for project in projects:
+            line = (
+                f"{project.name}\t"
+                f"{project.start_date.strftime('%d/%m/%Y')}\t"
+                f"{project.priority}\t"
+                f"{project.cost_estimate}\t"
+                f"{project.completion_percent}\n"
+            )
+            file.write(line)
 main()
