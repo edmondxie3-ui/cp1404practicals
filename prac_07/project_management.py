@@ -1,7 +1,7 @@
 """
 Project management
 Estimate: 30 minutes
-Actual:
+Actual: 2 hours 14 minutes
 """
 import datetime
 from prac_07.project import Project
@@ -9,16 +9,16 @@ from prac_07.project import Project
 FILENAME = "projects.txt"
 
 def main():
-    print("Welcome to the Pythonic Project Management")
+    print("Welcome to Pythonic Project Management")
     projects = load_projects(FILENAME)
     print(f"Loaded {len(projects)} projects from {FILENAME}")
-    print("(L)oad projects")
-    print("(S)ave projects")
-    print("(D)isplay projects")
-    print("(F)ilter projects by date")
-    print("(A)dd new project")
-    print("(U)pdate project")
-    print("(Q)uit")
+    print("- (L)oad projects")
+    print("- (S)ave projects")
+    print("- (D)isplay projects")
+    print("- (F)ilter projects by date")
+    print("- (A)dd new project")
+    print("- (U)pdate project")
+    print("- (Q)uit")
     choice = input(">>> ").lower()
     while choice != 'q':
         if choice == 'l':
@@ -83,13 +83,13 @@ def main():
             if new_priority != "":
                 project_to_update.priority = int(new_priority)
 
-        print("(L)oad projects")
-        print("(S)ave projects")
-        print("(D)isplay projects")
-        print("(F)ilter projects by date")
-        print("(A)dd new project")
-        print("(U)pdate project")
-        print("(Q)uit")
+        print("- (L)oad projects")
+        print("- (S)ave projects")
+        print("- (D)isplay projects")
+        print("- (F)ilter projects by date")
+        print("- (A)dd new project")
+        print("- (U)pdate project")
+        print("- (Q)uit")
         choice = input(">>> ").lower()
 
     save_choice = input(f"Would you like to save to projects.txt? ")
