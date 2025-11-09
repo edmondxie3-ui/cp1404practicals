@@ -29,9 +29,21 @@ def main():
             filename = input("Enter filename to save projects to: ")
             save_projects(filename, projects)
             print(f"Projects saved to {filename}")
+        elif choice == 'd':
+            incomplete_projects = [p for p in projects if p.completion_percent < 100]
+            completed_projects = [p for p in projects if p.completion_percent == 100]
 
-        # elif choice == 'd':
-        #
+            incomplete_projects.sort()
+            completed_projects.sort()
+
+            print("Incomplete projects: ")
+            for project in incomplete_projects:
+                print(f"  {project}")
+
+            print("Completed projects: ")
+            for project in completed_projects:
+                print(f"  {project}")
+
         # elif choice == 'f':
         #
         # elif choice == 'a':
@@ -57,8 +69,12 @@ def load_projects(filename):
         next(file)
         for line in file:
             parts = line.strip().split('\t')
+            name=parts[0]
             start_date = datetime.datetime.strptime(parts[1], "%d/%m/%Y").date()
-            project = Project(parts[0], start_date, parts[2], parts[3], parts[4])
+            priority=int(parts[2])
+            cost_estimate=float(parts[3])
+            completion_percent=int(parts[4])
+            project = Project(name, start_date, priority, cost_estimate, completion_percent)
             projects.append(project)
     return projects
 
