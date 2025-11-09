@@ -25,10 +25,12 @@ def main():
             filename = input("Enter filename to load projects from: ")
             projects = load_projects(filename)
             print(f"Loaded {len(projects)} projects from {filename}")
+
         elif choice == 's':
             filename = input("Enter filename to save projects to: ")
             save_projects(filename, projects)
             print(f"Projects saved to {filename}")
+
         elif choice == 'd':
             incomplete_projects = [p for p in projects if p.completion_percent < 100]
             completed_projects = [p for p in projects if p.completion_percent == 100]
@@ -44,8 +46,15 @@ def main():
             for project in completed_projects:
                 print(f"  {project}")
 
-        # elif choice == 'f':
-        #
+        elif choice == 'f':
+            date_string = input("Show projects that start after date (dd/mm/yyyy): ")
+            filter_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+            filtered_projects = [p for p in projects if p.start_date >= filter_date]
+            filtered_projects.sort()
+            print(f"Projects starting on or after {filter_date.strftime('%d/%m/%Y')}:")
+            for project in filtered_projects:
+                print(f"  {project}")
+
         # elif choice == 'a':
         #
         # elif choice == 'u':
