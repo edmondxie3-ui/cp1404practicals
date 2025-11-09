@@ -55,8 +55,18 @@ def main():
             for project in filtered_projects:
                 print(f"  {project}")
 
-        # elif choice == 'a':
-        #
+        elif choice == 'a':
+            print("Let's add a new project")
+            name = input("Name: ")
+            date_string = input("Start date (dd/mm/yyyy): ")
+            start_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+            priority = int(input("Priority: "))
+            cost_estimate = float(input("Cost estimate: $"))
+            completion_percent = int(input("Percent complete: "))
+            new_project = Project(name, start_date, priority, cost_estimate, completion_percent)
+            projects.append(new_project)
+            print(f"Project '{name}' added.")
+
         # elif choice == 'u':
 
         print("(L)oad projects")
