@@ -67,7 +67,21 @@ def main():
             projects.append(new_project)
             print(f"Project '{name}' added.")
 
-        # elif choice == 'u':
+        elif choice == 'u':
+            for i, project in enumerate(projects):
+                print(f"{i} {projects}")
+
+            choice_index = int(input("Project choice: "))
+            project_to_update = projects[choice_index]
+            print(project_to_update)
+
+            new_percent = input("New Percentage: ")
+            new_priority = input("New Priority: ")
+
+            if new_percent != "":
+                project_to_update.completion_percent = int(new_percent)
+            if new_priority != "":
+                project_to_update.priority = int(priority)
 
         print("(L)oad projects")
         print("(S)ave projects")
