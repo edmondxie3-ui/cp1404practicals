@@ -69,7 +69,7 @@ def main():
 
         elif choice == 'u':
             for i, project in enumerate(projects):
-                print(f"{i} {projects}")
+                print(f"{i} {project}")
 
             choice_index = int(input("Project choice: "))
             project_to_update = projects[choice_index]
@@ -81,7 +81,7 @@ def main():
             if new_percent != "":
                 project_to_update.completion_percent = int(new_percent)
             if new_priority != "":
-                project_to_update.priority = int(priority)
+                project_to_update.priority = int(new_priority)
 
         print("(L)oad projects")
         print("(S)ave projects")
@@ -93,7 +93,9 @@ def main():
         choice = input(">>> ").lower()
 
     save_choice = input(f"Would you like to save to projects.txt? ")
-    """YES OR NO"""
+    if save_choice == "yes":
+        save_projects(FILENAME, projects)
+        print(f"Projects saved to {FILENAME}")
     print("Thank you for using custom-built project management software.")
 
 def load_projects(filename):
