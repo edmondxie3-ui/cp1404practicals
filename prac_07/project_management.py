@@ -4,7 +4,10 @@ Estimate: 30 minutes
 Actual:
 """
 
+from prac_07.project import Project
+
 def main():
+    print()
     print("Welcome to the Pythonic Project Management")
     print(f"Loaded __ projects from projects.txt")
     print("(L)oad projects")
@@ -17,16 +20,18 @@ def main():
     choice = input(">>> ").lower()
     while choice != 'q':
         if choice == 'l':
+            print("Incomplete projects: ")
 
-        elif choice == 's':
-
-        elif choice == 'd':
-
-        elif choice == 'f':
-
-        elif choice == 'a':
-
-        elif choice == 'u':
+            print("Completed projects: ")
+        # elif choice == 's':
+        #
+        # elif choice == 'd':
+        #
+        # elif choice == 'f':
+        #
+        # elif choice == 'a':
+        #
+        # elif choice == 'u':
 
         print("(L)oad projects")
         print("(S)ave projects")
