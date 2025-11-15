@@ -1,12 +1,17 @@
 BoxLayout:
-    TextInput:
-        id: input_number
-        text: ''
-    Button:
-        text: 'Up'
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: input_number
+            text: ''
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                text: 'Up'
 
-    Button:
-        text: 'Down'
+            Button:
+                text: 'Down'
 
     Button:
         text: 'Convert miles to km'
