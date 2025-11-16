@@ -14,16 +14,20 @@ class ConvertMilesKm(App):
 
     def handle_calculate(self, value):
         try:
-            kilometers = float(value) * MILES_TO_KM
-            self.message = str(kilometers)
+            miles = float(value)
         except ValueError:
-            pass
+            miles = 0
+        kilometers = float(miles) * MILES_TO_KM
+        self.message = str(kilometers)
 
     def handle_increment(self, increment):
         try:
             current = float(self.root.ids.input_miles.text)
-            self.root.ids.input_miles.text = str(current + increment)
         except ValueError:
-            self.root.ids.input_miles.text = "0"
+            current = "0"
+
+        new_value = current + increment
+        self.root.ids.input_miles.text = str(new_value)
+        self.handle_calculate(self.root.ids.input_miles.text)
 
 ConvertMilesKm().run()
