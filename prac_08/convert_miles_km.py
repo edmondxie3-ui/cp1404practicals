@@ -17,4 +17,11 @@ class ConvertMilesKm(App):
         except ValueError:
             pass
 
+    def handle_increment(self, value):
+        try:
+            current = float(self.root.ids.input_miles.text)
+            self.root.ids.input_miles.text = str(current + value)
+        except ValueError:
+            self.root.ids.input_miles.text = "0"
+
 ConvertMilesKm().run()
